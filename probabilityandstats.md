@@ -283,3 +283,211 @@ The session concludes with:
 - Encouragement to **practice Python-based statistical analysis**.
 
 [check this link - online statistics calculator](https://datatab.net/statistics-calculator/descriptive-statistics)
+
+### **Top 10 Must-Know Probability Concepts**
+
+## **1. Experimental Probability**
+**Definition:**  
+Experimental probability is calculated **based on actual experiments or observations**.
+
+**Formula:**
+\[
+P(A) = \frac{\text{Number of times event A occurs}}{\text{Total number of trials}}
+\]
+
+**Example:**  
+- Flip a coin **10 times** and count how many times it lands on tails.
+- If tails appears **3 out of 10 times**, then:
+  \[
+  P(Tails) = \frac{3}{10} = 0.3 \text{ (or 30%)}
+  \]
+- **Law of Large Numbers** states that the **more trials conducted, the closer the experimental probability will be to the theoretical probability**.
+
+---
+
+## **2. Theoretical Probability**
+**Definition:**  
+Theoretical probability is based on **mathematical reasoning** rather than experiments.
+
+**Formula:**
+\[
+P(A) = \frac{\text{Number of favorable outcomes}}{\text{Total number of possible outcomes}}
+\]
+
+**Examples:**
+1. **Rolling a Die:**  
+   - Probability of rolling a **4**:
+     \[
+     P(4) = \frac{1}{6}
+     \]
+2. **Drawing a Card:**  
+   - Probability of drawing **a King** from a deck of 52 cards:
+     \[
+     P(King) = \frac{4}{52} = \frac{1}{13}
+     \]
+3. **Drawing a Red Marble:**  
+   - A bag contains **3 red, 2 blue, and 5 green** marbles.  
+   - Probability of drawing **a red marble**:
+     \[
+     P(Red) = \frac{3}{10}
+     \]
+
+---
+
+## **3. Probability Using Sets**
+Probability can be represented using **Venn Diagrams**. Two important concepts:
+
+1. **Intersection (AND) - \( A \cap B \)**:  
+   - Represents outcomes **common** to both sets.  
+   - Example: Probability of liking **both hockey and basketball**.
+
+2. **Union (OR) - \( A \cup B \)**:  
+   - Represents outcomes in **either** or **both** sets.  
+   - Formula:
+     \[
+     P(A \cup B) = P(A) + P(B) - P(A \cap B)
+     \]
+   - Example: Probability of liking **either basketball or soccer**.
+
+---
+
+## **4. Conditional Probability**
+**Definition:**  
+The probability of an event occurring **given that another event has already occurred**.
+
+**Formula:**
+\[
+P(B|A) = \frac{P(A \cap B)}{P(A)}
+\]
+where:
+- \( P(B|A) \) = Probability of event B given A has occurred
+- \( P(A \cap B) \) = Probability of both events happening
+- \( P(A) \) = Probability of A happening
+
+**Example:**
+- Given that a student is **female**, what is the probability she **likes school**?
+  - Find how many **females like school** and divide by the total number of **females**.
+
+---
+
+## **5. Multiplication Rule (Independent & Dependent Events)**
+- **Independent Events:** One event **does not** affect another.
+  \[
+  P(A \cap B) = P(A) \times P(B)
+  \]
+  - Example: Rolling a **3 on a die** and flipping **tails on a coin**.
+    \[
+    P(3 \cap Tails) = \frac{1}{6} \times \frac{1}{2} = \frac{1}{12}
+    \]
+
+- **Dependent Events:** One event **affects** another.
+  \[
+  P(A \cap B) = P(A) \times P(B|A)
+  \]
+  - Example: **Drawing two Kings in a row (without replacement)**:
+    \[
+    P(King \cap King) = \frac{4}{52} \times \frac{3}{51} = \frac{1}{221}
+    \]
+
+---
+
+## **6. Permutations**
+**Definition:**  
+A **permutation** is an ordered arrangement of objects.
+
+**Formula:**
+\[
+P(n, r) = \frac{n!}{(n - r)!}
+\]
+
+**Example:**  
+- How many different ways can **first, second, and third place** be awarded in a 10-person race?
+  \[
+  P(10, 3) = \frac{10!}{(10-3)!} = 10 \times 9 \times 8 = 720
+  \]
+
+---
+
+## **7. Combinations**
+**Definition:**  
+A **combination** is a selection **without considering order**.
+
+**Formula:**
+\[
+C(n, r) = \frac{n!}{r!(n - r)!}
+\]
+
+**Example:**
+- How many ways can you **form a team of 3 from 5 people**?
+  \[
+  C(5, 3) = \frac{5!}{3!(5-3)!} = \frac{5 \times 4}{2 \times 1} = 10
+  \]
+
+---
+
+## **8. Continuous Probability Distributions (Normal Distribution)**
+**Definition:**  
+A **continuous** probability distribution models an **infinite** range of outcomes.
+
+- The **Normal Distribution** (bell curve) is the most important.
+  - **68%** of values lie within **1 standard deviation**.
+  - **95%** within **2 standard deviations**.
+  - **99.7%** within **3 standard deviations**.
+
+**Example:**
+- If smokers have a **mean lifespan of 68 years** with a **standard deviation of 10**, what percentage lives **beyond 76**?
+  - Convert **76 to a z-score**:
+    \[
+    Z = \frac{76 - 68}{10} = 0.8
+    \]
+  - Using a **Z-table**, find the probability to the right of **Z = 0.8**.
+  - The result: **21.9% of smokers live beyond 76 years**.
+
+---
+
+## **9. Binomial Probability Distribution**
+**Definition:**  
+Models the probability of **k successes** in **n trials**.
+
+**Formula:**
+\[
+P(X = k) = C(n, k) \times p^k \times (1 - p)^{n-k}
+\]
+
+**Example:**
+- Probability of rolling a **three** exactly **twice** in **four rolls** of a die.
+  \[
+  P(2) = C(4,2) \times \left(\frac{1}{6}\right)^2 \times \left(\frac{5}{6}\right)^2
+  \]
+  - Computed probability: **0.157 (or 15.7%)**.
+
+---
+
+## **10. Geometric Probability Distribution**
+**Definition:**  
+Models the number of trials **until the first success**.
+
+**Formula:**
+\[
+P(X = k) = (1 - p)^{k-1} \times p
+\]
+
+**Example:**
+- Probability of **getting doubles** when rolling two dice, **on the 4th try**.
+  \[
+  P(4) = (5/6)^3 \times (1/6)
+  \]
+  - Computed probability: **0.0965 (or 9.65%)**.
+- Expected number of rolls until **first doubles**:
+  \[
+  E(X) = \frac{1}{p} = \frac{1}{1/6} = 6
+  \]
+
+---
+
+### **Final Takeaways**
+- Probability is a **core principle** in statistics and machine learning.
+- **Different distributions (binomial, normal, geometric)** help model real-world uncertainty.
+- **Knowing when to apply permutations, combinations, and conditional probability** is crucial.
+
+
