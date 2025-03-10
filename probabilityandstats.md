@@ -282,4 +282,4 @@ The session concludes with:
 - Practical applications in **machine learning models and business analytics**.
 - Encouragement to **practice Python-based statistical analysis**.
 
-This detailed summary provides an overview of the concepts covered in the session. Let me know if you need further clarification! 🚀
+[check this link - online statistics calculator](https://datatab.net/statistics-calculator/descriptive-statistics)
