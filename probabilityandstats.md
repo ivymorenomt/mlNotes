@@ -490,4 +490,4 @@ P(X = k) = (1 - p)^{k-1} \times p
 - **Different distributions (binomial, normal, geometric)** help model real-world uncertainty.
 - **Knowing when to apply permutations, combinations, and conditional probability** is crucial.
 
-
+[Probability Top 10 Must Knows](https://www.youtube.com/watch?v=LgLgexX7iTs)
