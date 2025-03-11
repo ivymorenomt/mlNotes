@@ -640,4 +640,181 @@ Where:
 4. **Bayesian Statistics helps in real-world scenarios where probability estimates are updated over time.**
 5. **Different notations exist, but explicit notation helps in better understanding.**
 
-This detailed summary **captures the essence of the explanation** while retaining the **fun and engaging tone of the StatQuest video**! 🎉 Let me know if you need **any modifications or additional clarifications!** 😊
+### **Detailed Summary of "Bayes' Theorem Explained with Examples"**
+
+This video provides an **in-depth explanation of Bayes' Theorem**, starting with **conditional probability**, followed by a **step-by-step derivation**, and concluding with **real-world examples**. The lesson includes **mathematical derivations, a Venn diagram approach, and a practical application to medical testing**.
+
+---
+
+## **1. Introduction to Conditional Probability**
+Before diving into **Bayes' Theorem**, the video reviews **conditional probability**.
+
+### **Conditional Probability Formula**
+\[
+P(A|B) = \frac{P(A \cap B)}{P(B)}
+\]
+- **\( P(A|B) \)**: Probability of event **A** occurring **given that** event **B** has already occurred.
+- **\( P(A \cap B) \)**: Probability of **both events happening**.
+- **\( P(B) \)**: Probability of event **B** happening.
+
+Similarly, for the reverse case:
+\[
+P(B|A) = \frac{P(B \cap A)}{P(A)}
+\]
+
+Since **\( P(A \cap B) = P(B \cap A) \)**, we set these two equations equal to each other, forming the foundation for **Bayes' Theorem**.
+
+---
+
+## **2. Deriving Bayes' Theorem**
+Using the conditional probability formulas:
+\[
+P(A|B) P(B) = P(B|A) P(A)
+\]
+Dividing both sides by \( P(B) \), we get **Bayes' Theorem**:
+
+\[
+P(A|B) = \frac{P(B|A) P(A)}{P(B)}
+\]
+
+Where:
+- \( P(A|B) \) = Probability of **A given B** (Posterior Probability)
+- \( P(B|A) \) = Probability of **B given A** (Likelihood)
+- \( P(A) \) = Probability of **A occurring** (Prior Probability)
+- \( P(B) \) = Probability of **B occurring** (Marginal Probability)
+
+**Key Insight:**  
+Bayes' Theorem allows us to calculate the **conditional probability in reverse**, using **prior knowledge** and **known probabilities**.
+
+---
+
+## **3. First Example: Drawing Numbers from a Bottle**
+To illustrate **Bayes' Theorem**, the video uses an **example of drawing numbers from a bottle**.
+
+### **Problem Setup**
+- The bottle contains **pieces of paper numbered from 1 to 9**.
+- **Event A**: Drawing **1, 2, 3, 4, or 5**.
+- **Event B**: Drawing **4, 5, 6, 7, 8, or 9**.
+- The goal: **Find \( P(A|B) \), the probability of Event A given that Event B has occurred.**
+
+### **Step 1: Define the Probabilities**
+- **Total sample space** = **Numbers 1 to 9**.
+- **\( P(A) \) = Probability of selecting a number in A**:
+  \[
+  P(A) = \frac{5}{9}
+  \]
+- **\( P(B) \) = Probability of selecting a number in B**:
+  \[
+  P(B) = \frac{6}{9}
+  \]
+- **\( P(B|A) \) = Probability of getting a number in B given that we already picked a number from A**:
+  - Only **two numbers (4 and 5) belong to both A and B**.
+  - So, \( P(B|A) = \frac{2}{5} \).
+
+### **Step 2: Apply Bayes' Theorem**
+\[
+P(A|B) = \frac{P(B|A) P(A)}{P(B)}
+\]
+
+Substituting values:
+\[
+P(A|B) = \frac{\left(\frac{2}{5} \right) \times \left(\frac{5}{9} \right)}{\frac{6}{9}}
+\]
+
+Simplifying:
+- \( \frac{5}{9} \) cancels out the **5s**.
+- \( \frac{2}{6} = \frac{1}{3} \).
+
+Thus, **the probability of drawing a number from A given that B has occurred is \( \frac{1}{3} \) or 33.3%**.
+
+### **Verification Using Conditional Probability**
+- **\( P(A \cap B) \)**: The probability of drawing a number that belongs to **both A and B**:
+  \[
+  P(A \cap B) = \frac{2}{9}
+  \]
+- **\( P(A|B) \) using direct formula**:
+  \[
+  P(A|B) = \frac{P(A \cap B)}{P(B)}
+  \]
+  \[
+  P(A|B) = \frac{2/9}{6/9} = \frac{2}{6} = \frac{1}{3}
+  \]
+
+Thus, **Bayes' Theorem and direct conditional probability yield the same answer**.
+
+---
+
+## **4. Second Example: Medical Testing for Prostate Cancer**
+The second example **applies Bayes' Theorem in a real-world scenario**.
+
+### **Problem Setup**
+A medical study finds that:
+- **12% of men will develop prostate cancer**.
+- **If a man has cancer, there is a 95% chance of testing positive**.
+- **If a man does NOT have cancer, there is a 6% chance of a false positive**.
+
+**Question:**  
+What is the probability that a man **actually has cancer given that he tested positive**?
+
+### **Step 1: Define the Probabilities**
+- **\( P(C) \) = Probability of having cancer** = 12% = **0.12**.
+- **\( P(\neg C) \) = Probability of NOT having cancer** = 88% = **0.88**.
+- **\( P(T|C) \) = Probability of testing positive given cancer** = 95% = **0.95**.
+- **\( P(T|\neg C) \) = Probability of false positive** = 6% = **0.06**.
+
+### **Step 2: Find the Probability of a Positive Test**
+Using **Total Probability Rule**:
+\[
+P(T) = P(T|C) P(C) + P(T|\neg C) P(\neg C)
+\]
+\[
+P(T) = (0.95 \times 0.12) + (0.06 \times 0.88)
+\]
+\[
+P(T) = 0.114 + 0.0528 = 0.1668
+\]
+
+### **Step 3: Apply Bayes' Theorem**
+\[
+P(C|T) = \frac{P(T|C) P(C)}{P(T)}
+\]
+\[
+P(C|T) = \frac{(0.95 \times 0.12)}{0.1668}
+\]
+
+### **Step 4: Compute the Final Probability**
+\[
+P(C|T) = \frac{0.114}{0.1668} = 0.683
+\]
+
+Thus, **the probability that a man actually has cancer given a positive test result is 68.3%**.
+
+### **Alternative Method: Tree Diagram**
+A **tree diagram** confirms the same result:
+- **Total positives = 1140 (true) + 528 (false) = 1668**.
+- **True positives = 1140**.
+- **Bayesian Probability = \( \frac{1140}{1668} = 0.683 \) (68.3%)**.
+
+### **Takeaways from this Example**
+- **Bayes' Theorem helps interpret medical test results accurately**.
+- Even with a **95% accurate test**, **false positives are common**.
+- **31.7% of positive results are actually false positives**.
+
+---
+
+## **5. Final Thoughts**
+- **Bayes' Theorem is an essential probability tool** for making **reverse probability inferences**.
+- **Applications**: **Medical testing, spam filters, machine learning, diagnostics, and more**.
+- **Multiple approaches** (Venn Diagrams, Tree Diagrams, and Direct Calculation) validate Bayes' Theorem.
+
+---
+
+### **Final Summary**
+1. **Bayes' Theorem calculates reverse conditional probabilities**.
+2. **Mathematical derivation shows its foundation in conditional probability**.
+3. **Two real-world examples demonstrate its power**:
+   - **Drawing numbers from a bottle** (Basic probability).
+   - **Medical testing** (Practical, life-impacting application).
+4. **Tree diagrams and total probability rule help visualize problems**.
+5. **Understanding Bayes' Theorem is crucial for decision-making in uncertain situations**.
+
