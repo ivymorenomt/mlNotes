@@ -818,3 +818,165 @@ A **tree diagram** confirms the same result:
 4. **Tree diagrams and total probability rule help visualize problems**.
 5. **Understanding Bayes' Theorem is crucial for decision-making in uncertain situations**.
 
+### **Detailed Summary of "Probability Distributions and Their Formulas"**  
+
+This video provides an **overview of various probability distributions**, focusing on their **formulas**, **mean**, **variance**, and **key properties**. It covers **Binomial, Geometric, Poisson, Uniform, and Exponential distributions** with clear explanations and derivations.  
+
+---
+
+## **1. Binomial Distribution**  
+**Definition:** The **binomial distribution** models the number of **successes** in a fixed number of **independent trials**, where each trial has two possible outcomes: **success** or **failure**.
+
+### **Formula:**
+\[
+P(X = k) = \binom{n}{k} p^k (1 - p)^{n - k}
+\]
+Where:  
+- \( n \) = Total number of trials  
+- \( k \) = Number of successes  
+- \( p \) = Probability of success in one trial  
+- \( 1 - p \) = Probability of failure in one trial  
+
+### **Mean and Standard Deviation:**
+- **Mean**: \( \mu = n \times p \)  
+- **Variance**: \( \sigma^2 = n \times p \times (1 - p) \)  
+- **Standard Deviation**: \( \sigma = \sqrt{n \times p \times (1 - p)} \)  
+
+---
+
+## **2. Geometric Distribution**  
+**Definition:** The **geometric distribution** models the probability of the **first success occurring on the \( n \)th trial**. It represents a series of independent **Bernoulli trials**.
+
+### **Formula:**
+\[
+P(X = n) = (1 - p)^{n - 1} p
+\]
+Where:  
+- \( p \) = Probability of success  
+- \( (1 - p) \) = Probability of failure  
+
+### **Cumulative Probabilities:**
+- **Probability that \( X \) is greater than \( n \)**:
+  \[
+  P(X > n) = (1 - p)^n
+  \]
+- **Probability that \( X \) is greater than or equal to \( n \)**:
+  \[
+  P(X \geq n) = (1 - p)^{n - 1}
+  \]
+- **Probability that \( X \) is less than or equal to \( n \)**:
+  \[
+  P(X \leq n) = 1 - (1 - p)^n
+  \]
+
+### **Mean, Variance, and Standard Deviation:**
+- **Mean**: \( E(X) = \frac{1}{p} \)  
+- **Variance**: \( \sigma^2 = \frac{1 - p}{p^2} \)  
+- **Standard Deviation**: \( \sigma = \sqrt{\frac{1 - p}{p^2}} \)  
+
+---
+
+## **3. Poisson Distribution**  
+**Definition:** The **Poisson distribution** models the probability of **a certain number of events occurring in a fixed interval of time or space**, assuming the events occur **independently**.
+
+### **Formula:**
+\[
+P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}
+\]
+Where:  
+- \( \lambda \) = Expected number of occurrences in a given time/space interval  
+- \( k \) = Observed number of occurrences  
+
+### **Mean and Variance:**
+- **Mean**: \( E(X) = \lambda \)  
+- **Variance**: \( \sigma^2 = \lambda \)  
+- **Standard Deviation**: \( \sigma = \sqrt{\lambda} \)  
+
+### **Cumulative Probability:**
+The probability that \( X \) is **greater than \( n \)**:
+\[
+P(X > n) = 1 - e^{-\lambda} \sum_{x=0}^{n} \frac{\lambda^x}{x!}
+\]
+
+---
+
+## **4. Uniform Distribution**  
+**Definition:** The **uniform distribution** describes a scenario where **all outcomes in an interval have equal probability**.
+
+### **Formula:**
+\[
+f(x) = \frac{1}{b - a}, \quad \text{for } a \leq x \leq b
+\]
+Where:  
+- \( a \) and \( b \) define the range of possible values  
+- The total area under the **probability density function (PDF)** must be **1**  
+
+### **Cumulative Probability Calculation:**
+The probability that **\( X \) falls between two values** \( c \) and \( d \):
+\[
+P(c \leq X \leq d) = \frac{d - c}{b - a}
+\]
+This **compares the ratio of the shaded region to the total area**.
+
+### **Mean and Standard Deviation:**
+- **Mean**: \( E(X) = \frac{a + b}{2} \)  
+- **Variance**: \( \sigma^2 = \frac{(b - a)^2}{12} \)  
+- **Standard Deviation**: \( \sigma = \frac{b - a}{\sqrt{12}} \)  
+
+---
+
+## **5. Exponential Distribution**  
+**Definition:** The **exponential distribution** models the time between events in a Poisson process. It is **memoryless**, meaning the probability of an event **does not depend on previous events**.
+
+### **Formula:**
+\[
+P(X \leq t) = 1 - e^{-\lambda t}
+\]
+Where:
+- \( \lambda \) = **Rate parameter** (inverse of mean time between events)
+- \( t \) = Time interval  
+
+### **Probability that \( X \) is greater than \( n \):**
+\[
+P(X > n) = e^{-\lambda n}
+\]
+
+### **Mean and Variance:**
+- **Mean**: \( E(X) = \frac{1}{\lambda} \)  
+- **Variance**: \( \sigma^2 = \frac{1}{\lambda^2} \)  
+- **Standard Deviation**: \( \sigma = \frac{1}{\lambda} \)  
+
+### **Probability Density Function (PDF):**
+\[
+f(x) = \lambda e^{-\lambda x}, \quad x \geq 0
+\]
+
+---
+
+## **6. Summary of Key Distributions and Formulas**
+| **Distribution**   | **Formula for Probability**  | **Mean \( \mu \)**  | **Variance \( \sigma^2 \)** |
+|-------------------|---------------------------|----------------|------------------|
+| **Binomial**      | \( P(X = k) = \binom{n}{k} p^k (1 - p)^{n - k} \) | \( n p \)  | \( n p (1 - p) \)  |
+| **Geometric**     | \( P(X = n) = (1 - p)^{n - 1} p \) | \( \frac{1}{p} \)  | \( \frac{1 - p}{p^2} \)  |
+| **Poisson**       | \( P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!} \) | \( \lambda \)  | \( \lambda \)  |
+| **Uniform**       | \( f(x) = \frac{1}{b - a} \) | \( \frac{a + b}{2} \)  | \( \frac{(b - a)^2}{12} \)  |
+| **Exponential**   | \( P(X \leq t) = 1 - e^{-\lambda t} \) | \( \frac{1}{\lambda} \)  | \( \frac{1}{\lambda^2} \)  |
+
+---
+
+## **7. Final Thoughts**
+- **Binomial distribution** models **successes in fixed trials**.  
+- **Geometric distribution** models **time until first success**.  
+- **Poisson distribution** models **events occurring in a fixed interval**.  
+- **Uniform distribution** represents **equal probability across an interval**.  
+- **Exponential distribution** models **time between Poisson events**.  
+
+---
+
+### **Final Summary**
+- This video explains **essential probability distributions** used in statistics.
+- It covers **their formulas, probability calculations, and statistical properties**.
+- The **formulas are crucial for data science, machine learning, and decision-making**.
+- **Real-world examples and probability scenarios** illustrate their applications.
+
+[Probability Distribution Formulas](https://www.youtube.com/watch?v=KMLR_lOnVmI)
