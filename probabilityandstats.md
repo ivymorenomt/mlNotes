@@ -971,12 +971,142 @@ f(x) = \lambda e^{-\lambda x}, \quad x \geq 0
 - **Uniform distribution** represents **equal probability across an interval**.  
 - **Exponential distribution** models **time between Poisson events**.  
 
+[Probability Distribution Formulas](https://www.youtube.com/watch?v=KMLR_lOnVmI)
+
+### **Detailed Summary of "Top 3 Probability Distributions for Data Science Interviews"**
+
+This video focuses on the **three most commonly used probability distributions** in **data science interviews**:  
+1. **Normal Distribution**  
+2. **Binomial Distribution**  
+3. **Geometric Distribution**  
+
+The presenter, **Emma**, discusses **real-world applications** of these distributions and why they are frequently used in **data science and statistics**. The video serves as a **refresher for probability concepts** and provides insights into **how these distributions are applied in practice**.
+
 ---
 
-### **Final Summary**
-- This video explains **essential probability distributions** used in statistics.
-- It covers **their formulas, probability calculations, and statistical properties**.
-- The **formulas are crucial for data science, machine learning, and decision-making**.
-- **Real-world examples and probability scenarios** illustrate their applications.
+## **1. Normal Distribution (Gaussian Distribution)**
+The **normal distribution**, also known as the **Gaussian distribution**, is the **most common probability distribution for continuous data**. It is also called a **bell curve** due to its shape.
 
-[Probability Distribution Formulas](https://www.youtube.com/watch?v=KMLR_lOnVmI)
+### **Why is the Normal Distribution Important?**
+- The **Central Limit Theorem (CLT)** states that:
+  - If we repeatedly sample data and calculate **sample means**, the distribution of these means **will be normal**, regardless of the original population distribution.
+  - This holds as long as the sample size is **sufficiently large (at least 30)**.
+- This makes the **normal distribution** extremely useful in **statistical inference and hypothesis testing**.
+
+### **Key Properties:**
+- **Mean (\(\mu\))**: The peak of the bell curve represents the **average**.
+- **Standard Deviation (\(\sigma\))**: Measures how **spread out** the data is.
+- **68-95-99.7 Rule**:
+  - **68%** of data falls within **1 standard deviation**.
+  - **95%** of data falls within **2 standard deviations**.
+  - **99.7%** of data falls within **3 standard deviations**.
+
+### **Real-World Example:**
+**Measuring Time Spent on a Website**
+- Suppose we want to **estimate the average time** users spend on a website per day.
+- We **randomly select 10 users**, compute the **average time**, and **repeat the process 1000 times**.
+- **The distribution of sample means will be normal**, thanks to the **Central Limit Theorem**.
+- Similarly, if we compute the **total time spent by all users**, this sum also follows a **normal distribution**.
+
+### **Why is Normal Distribution Used in Data Science?**
+- Even if the **original population distribution is not normal**, the sample mean follows a **normal distribution**.
+- This allows data scientists to use **statistical methods** based on the normal distribution for tasks like:
+  - **A/B testing**
+  - **Confidence intervals**
+  - **Hypothesis testing**
+  - **Predictive modeling**
+
+---
+
+## **2. Binomial Distribution**
+The **binomial distribution** is used for **discrete** data where an experiment consists of **multiple independent trials**, each with a **binary outcome (Success/Failure, Yes/No, Click/No Click, etc.)**.
+
+### **Key Characteristics:**
+- **Binary outcomes** (Success/Failure)
+- **Fixed number of trials** (\(n\))
+- **Constant probability** of success (\(p\))
+- **Independent trials** (one outcome does not affect another)
+
+### **Formula:**
+\[
+P(X = k) = \binom{n}{k} p^k (1 - p)^{n - k}
+\]
+Where:
+- \(n\) = Total number of trials
+- \(k\) = Number of successes
+- \(p\) = Probability of success
+- \(1 - p\) = Probability of failure
+
+### **Real-World Example: Click-Through Rate (CTR)**
+- Suppose an **advertisement has a Click-Through Rate (CTR) of \(p\)**.
+- If the ad is shown to **\(n\) users**, the number of users who click follows a **binomial distribution**.
+- We can use the **binomial probability mass function (PMF)** to calculate the **likelihood of getting exactly \(k\) clicks**.
+
+### **Special Case: Bernoulli Distribution**
+- A **Bernoulli distribution** is a **binomial distribution with \(n = 1\)**.
+- It models **a single trial with a binary outcome**.
+- Example: **Whether a user clicks on an ad (1 for click, 0 for no click).**
+
+### **Other Use Cases:**
+- **Measuring Conversion Rates** (success = user purchasing a product).
+- **Subscription-Based Businesses** (success = user subscribing).
+- **Customer Retention Analysis** (success = customer staying).
+
+---
+
+## **3. Geometric Distribution**
+The **geometric distribution** models **the number of trials required to get the first success** in a **series of independent Bernoulli trials**.
+
+### **Key Characteristics:**
+- Trials are **independent**.
+- The probability of **success** remains constant across trials.
+- The variable \(X\) represents the **number of trials needed** to get the **first success**.
+
+### **Formula:**
+\[
+P(X = k) = (1 - p)^{k - 1} p
+\]
+Where:
+- \(p\) = Probability of success
+- \(1 - p\) = Probability of failure
+- \(k\) = Trial number where success first occurs
+
+### **Relation to the Negative Binomial Distribution**
+- **Negative binomial distribution** models the **number of successes before a certain number of failures occur**.
+- **Geometric distribution** is a special case where we count **the trials needed for the first success**.
+
+### **Real-World Example: Customer Lifetime Analysis**
+- **Customer churn rate (\(C\))**: The probability that a customer **stops using a service in a given month**.
+- We define **"success" as a customer churning**.
+- The **average customer lifetime** can be calculated using the **expected value of the geometric distribution**:
+  \[
+  \text{Customer Lifetime} = \frac{1}{C}
+  \]
+- If **C = 10% (0.10)**, the expected **customer lifetime is 10 months**.
+- If **C = 20% (0.20)**, the expected **customer lifetime is 5 months**.
+
+### **Other Applications:**
+- **Number of sales calls before closing a deal**.
+- **Waiting time until the first website signup**.
+- **Number of attempts before successfully logging in**.
+
+---
+
+## **4. Summary of Key Takeaways**
+| **Distribution** | **Definition** | **Formula** | **Real-World Applications** |
+|----------------|--------------|------------|----------------------|
+| **Normal Distribution** | Used for **continuous** data. Follows a **bell curve**. | Central Limit Theorem ensures that **sample means follow a normal distribution**. | **Website traffic, A/B testing, customer spending patterns**. |
+| **Binomial Distribution** | Models **number of successes** in **\(n\) trials** with **binary outcomes**. | \( P(X = k) = \binom{n}{k} p^k (1 - p)^{n - k} \) | **Click-through rate (CTR), customer purchases, survey responses**. |
+| **Geometric Distribution** | Models **trials until the first success** occurs. | \( P(X = k) = (1 - p)^{k - 1} p \) | **Customer churn analysis, number of failed login attempts before success**. |
+
+---
+
+## **5. Final Thoughts**
+- **These three probability distributions are frequently tested in data science interviews**.
+- **Understanding their properties, formulas, and real-world applications is crucial**.
+- **The Central Limit Theorem makes the normal distribution widely applicable**.
+- **The binomial distribution is key for binary outcomes (clicks, purchases, conversions)**.
+- **The geometric distribution is useful for predicting customer lifetime and first-success scenarios**.
+
+
+[Probability Distributions Made Easy: Top 3 to Know for Data Science Interviews](https://www.youtube.com/watch?v=U8JiV9vEMsA)
