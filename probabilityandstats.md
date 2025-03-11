@@ -491,3 +491,153 @@ P(X = k) = (1 - p)^{k-1} \times p
 - **Knowing when to apply permutations, combinations, and conditional probability** is crucial.
 
 [Probability Top 10 Must Knows](https://www.youtube.com/watch?v=LgLgexX7iTs)
+
+### **Summary of "Bayes' Theorem Explained**
+
+
+## **2. Quick Review of Conditional Probability**
+Before diving into **Bayes' Theorem**, a review of **conditional probability** is provided through an example.
+
+### **Example Scenario: StatLand Population Survey**
+- People in **StatLand** are surveyed on whether they **love candy and/or soda**.
+- Responses are categorized into **four groups**:
+  - **2 people** love **both** candy and soda.
+  - **4 people** love **only candy**.
+  - **5 people** love **only soda**.
+  - **3 people** do not love **either**.
+
+### **Constructing a Probability Table**
+- Each category is converted into **probabilities** by dividing **counts by the total population (14 people)**.
+- Probabilities of **loving or not loving candy** and **soda** are determined.
+
+### **Conditional Probability Calculation**
+- The **conditional probability** that a person **does not love candy but loves soda**, given that they already love soda, is calculated as:
+  \[
+  P(\text{Not Candy | Soda}) = \frac{P(\text{Not Candy and Soda})}{P(\text{Soda})}
+  \]
+- Plugging in the values:
+  \[
+  P(\text{Not Candy | Soda}) = \frac{5}{7} = 0.71
+  \]
+- **Alternative Method:**  
+  - **Dividing the numerator and denominator by the total population (14)** does **not change the result**.
+  - But now, the numerator is the **unconditional probability** of **not loving candy but loving soda**.
+  - The denominator is the **unconditional probability** of **loving soda**.
+
+**Key Takeaway:**  
+Conditional probability **scales an event's probability** based on **known information**.
+
+---
+
+## **3. Understanding Bayes' Theorem**
+### **Changing the Given Condition**
+- Instead of knowing that a person **loves soda**, now we assume we already know they **do not love candy**.
+- The conditional probability now becomes:
+  \[
+  P(\text{Soda | Not Candy}) = \frac{P(\text{Not Candy and Soda})}{P(\text{Not Candy})}
+  \]
+- Calculation:
+  \[
+  P(\text{Soda | Not Candy}) = \frac{5}{8} = 0.63
+  \]
+- **Comparison:**  
+  - When we knew a person **loved soda**, the probability was **0.71**.
+  - When we knew a person **did not love candy**, the probability was **0.63**.
+  - Different knowledge leads to **different probability scaling**.
+
+---
+
+## **4. Deriving Bayes' Theorem**
+### **Statsquatch's Bet: Solving Without Knowing the Numerator**
+- **Statsquatch** challenges us to solve for conditional probabilities **without knowing** \( P(A \cap B) \).
+- **Mathematical Trick:**  
+  - Multiply **both sides** of each probability equation by the denominator:
+    \[
+    P(\text{Not Candy and Soda}) = P(\text{Not Candy | Soda}) \times P(\text{Soda})
+    \]
+    \[
+    P(\text{Not Candy and Soda}) = P(\text{Soda | Not Candy}) \times P(\text{Not Candy})
+    \]
+  - Since both equations **equal the same term** (\( P(\text{Not Candy and Soda}) \)), we set them equal:
+    \[
+    P(\text{Not Candy | Soda}) \times P(\text{Soda}) = P(\text{Soda | Not Candy}) \times P(\text{Not Candy})
+    \]
+  - Solving for \( P(\text{Soda | Not Candy}) \):
+    \[
+    P(\text{Soda | Not Candy}) = \frac{P(\text{Not Candy | Soda}) \times P(\text{Soda})}{P(\text{Not Candy})}
+    \]
+  - **Double BAM!** We just derived **Bayes' Theorem**.
+
+### **Generalized Bayes’ Theorem Formula**
+\[
+P(A | B) = \frac{P(B | A) \times P(A)}{P(B)}
+\]
+
+Where:
+- \( P(A | B) \) = Probability of event \( A \) **given** event \( B \).
+- \( P(B | A) \) = Probability of event \( B \) **given** event \( A \).
+- \( P(A) \) = Prior probability of event \( A \).
+- \( P(B) \) = Total probability of event \( B \).
+
+---
+
+## **5. Why Bayes' Theorem is Useful**
+### **When You Have All the Data**
+- **Bayes' Theorem is unnecessary** when we have a **complete contingency table** or full dataset.
+
+### **When You Don't Have All the Data**
+- Often, **real-world problems lack complete data**.
+- **Example:**  
+  - Statsquatch **only gives approximate values**:
+    - \( P(\text{Not Candy | Soda}) = 0.71 \)
+    - \( P(\text{Soda}) \approx 0.6 \)
+    - \( P(\text{Not Candy}) \approx 0.57 \)
+  - **Applying Bayes' Theorem:**
+    \[
+    P(\text{Soda | Not Candy}) = \frac{(0.71 \times 0.6)}{0.57} = 0.75
+    \]
+  - Since one of the values was a **guess**, the computed probability **differs slightly** from the exact calculation.
+
+### **Bayesian Statistics and Guessing**
+- Often, we must **estimate probabilities** due to **incomplete data**.
+- Example: **Surveying an entire country like India** is impractical.
+- Bayesian statistics **incorporates prior beliefs** and **updates them** based on new evidence.
+
+---
+
+## **6. Notation Differences in Bayes' Theorem**
+- **Standard notation omits redundant details**.
+- Instead of writing:
+  \[
+  P(\text{Not Candy and Soda | Soda})
+  \]
+  It is **shortened to**:
+  \[
+  P(\text{Not Candy | Soda})
+  \]
+- **Josh Starmer prefers the longer notation** because it clearly **shows how probability scaling works**.
+
+---
+
+## **7. Conclusion**
+- **Bayes’ Theorem is incredibly useful** when **data is missing or uncertain**.
+- **Bayesian Statistics** extends Bayes' Theorem to **iteratively update probabilities**.
+- The **StatQuest series** will cover **more Bayesian topics** in future videos.
+
+### **Final Message**
+- **Shameless Self-Promotion**:
+  - **StatQuest Study Guides** available at [statquest.org](https://statquest.org).
+  - Support **StatQuest via Patreon, buying merch, or donations**.
+- **Josh’s Signature Ending:**  
+  **"Until next time, Quest on!"** 🚀
+
+---
+
+### **Key Takeaways**
+1. **Conditional probability scales probability using given information.**
+2. **Bayes' Theorem allows us to reverse conditional probability relationships.**
+3. **It is most useful when full data is unavailable.**
+4. **Bayesian Statistics helps in real-world scenarios where probability estimates are updated over time.**
+5. **Different notations exist, but explicit notation helps in better understanding.**
+
+This detailed summary **captures the essence of the explanation** while retaining the **fun and engaging tone of the StatQuest video**! 🎉 Let me know if you need **any modifications or additional clarifications!** 😊
