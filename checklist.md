@@ -1,6 +1,6 @@
 ### Checklist of concepts to learn:
 Mathematics for ML:
-- [] Probability & Statistics (Bayes’ theorem, distributions, hypothesis testing)
+- [x] [Probability & Statistics (Bayes’ theorem, distributions, hypothesis testing)](https://github.com/ivymorenomt/mlNotes/blob/main/probabilityandstats.md)
 - [] Linear Algebra (vectors, matrices, eigenvalues, PCA for data analysis)
 - [] Optimization (Gradient Descent, Lagrange multipliers, convex optimization)
 - [] Information Theory (Entropy, KL divergence for measuring model uncertainty)
